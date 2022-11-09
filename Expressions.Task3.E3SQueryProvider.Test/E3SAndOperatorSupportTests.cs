@@ -8,9 +8,12 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Expressions.Task3.E3SQueryProvider.Models.Entities;
+using Expressions.Task3.E3SQueryProvider.Models.Request;
+using Newtonsoft.Json;
 using Xunit;
 
 namespace Expressions.Task3.E3SQueryProvider.Test
@@ -34,8 +37,27 @@ namespace Expressions.Task3.E3SQueryProvider.Test
               ],
              */
 
+            var ftsQueryRequest = new FtsQueryRequest()
+            {
+                Statements = new List<Statement>
+                {
+                    new Statement() { Query = "Workstation:(EPRUIZHW006)"},
+                    new Statement() { Query = "Manager:(John*)"}
+                }
+            };
+
+            var ftsQueryRequestString = JsonConvert.SerializeObject(ftsQueryRequest,
+                Formatting.None, new JsonSerializerSettings() 
+                { 
+                    NullValueHandling = NullValueHandling.Ignore,
+                    DefaultValueHandling = DefaultValueHandling.Ignore 
+                });
+
+            string translated = translator.Translate(expression);
+            Assert.Equal(ftsQueryRequestString, translated);
+
             // todo: create asserts for this test by yourself, because they will depend on your final implementation
-            throw new NotImplementedException("Please implement this test and the appropriate functionality");
+            // throw new NotImplementedException("Please implement this test and the appropriate functionality");
         }
 
         #endregion

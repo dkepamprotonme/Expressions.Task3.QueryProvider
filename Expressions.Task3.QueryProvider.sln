@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expressions.Task3.E3SQueryP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expressions.Task3.E3SQueryProvider.Test", "Expressions.Task3.E3SQueryProvider.Test\Expressions.Task3.E3SQueryProvider.Test.csproj", "{EA1ABEF1-BA50-4D7B-9E2F-4503D1CE0C18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsSqlLinqProvider", "MsSqlLinqProvider\MsSqlLinqProvider.csproj", "{BC65939B-81F8-4554-86BB-A42C9570A646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsSqlLinqProvider.Test", "MsSqlLinqProvider.Test\MsSqlLinqProvider.Test.csproj", "{C12E17E5-2010-4E9B-995C-A26BC82C8F00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{EA1ABEF1-BA50-4D7B-9E2F-4503D1CE0C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA1ABEF1-BA50-4D7B-9E2F-4503D1CE0C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA1ABEF1-BA50-4D7B-9E2F-4503D1CE0C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC65939B-81F8-4554-86BB-A42C9570A646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC65939B-81F8-4554-86BB-A42C9570A646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC65939B-81F8-4554-86BB-A42C9570A646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC65939B-81F8-4554-86BB-A42C9570A646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12E17E5-2010-4E9B-995C-A26BC82C8F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12E17E5-2010-4E9B-995C-A26BC82C8F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12E17E5-2010-4E9B-995C-A26BC82C8F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12E17E5-2010-4E9B-995C-A26BC82C8F00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
