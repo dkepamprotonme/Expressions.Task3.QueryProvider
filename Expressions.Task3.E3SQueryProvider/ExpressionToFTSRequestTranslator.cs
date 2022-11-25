@@ -29,7 +29,7 @@ namespace Expressions.Task3.E3SQueryProvider
         protected override Expression VisitMethodCall(MethodCallExpression node)
         {
             if (node.Method.DeclaringType == typeof(Queryable)
-                && node.Method.Name == "Where")
+                && node.Method.Name == nameof(Queryable.Where))
             {
                 var predicate = node.Arguments[1];
                 Visit(predicate);
@@ -38,20 +38,20 @@ namespace Expressions.Task3.E3SQueryProvider
             }
 
             if (node.Method.DeclaringType == typeof(string)
-                && (node.Method.Name == "Equals"
-                || node.Method.Name == "Contains"
-                || node.Method.Name == "StartsWith"
-                || node.Method.Name == "EndsWith"))
+                && (node.Method.Name == nameof(string.Equals)
+                || node.Method.Name == nameof(string.Contains)
+                || node.Method.Name == nameof(string.StartsWith)
+                || node.Method.Name == nameof(string.EndsWith)))
             {
                 Visit(node.Object);
                 _resultStringBuilder.Append("(");
-                if (node.Method.Name == "Contains" || node.Method.Name == "EndsWith")
+                if (node.Method.Name == nameof(string.Contains) || node.Method.Name == nameof(string.EndsWith))
                 {
                     _resultStringBuilder.Append("*");
                 }
                 var predicate = node.Arguments[0];
                 Visit(predicate);
-                if (node.Method.Name == "Contains" || node.Method.Name == "StartsWith")
+                if (node.Method.Name == nameof(string.Contains) || node.Method.Name == nameof(string.StartsWith))
                 {
                     _resultStringBuilder.Append("*");
                 }
